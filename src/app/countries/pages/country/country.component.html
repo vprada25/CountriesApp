@@ -17,12 +17,13 @@
 </div>
 
 <hr>
-<div class="alert alert-danger">
-    No se encontro nada con el termino de busqueda
+<div *ngIf="Error"
+class="alert alert-danger">
+    No se encontro el termino de busqueda: {{arg}}
 </div>
 
 <div class="row">
-    <div class="col">
+    <div class="col" *ngIf="!Error">
         <table class="table table-hover">
             <thead>
                 <tr>
