@@ -1,1 +1,65 @@
-<p>country works!</p>
+<h2>
+    Por Pais
+</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="search()" action="" autocomplete="off">
+            <input type="text" 
+            type="text" 
+            name="arg" 
+            class="form-control" 
+            [(ngModel)]="arg"
+            placeholder="Buscar pais...">
+        </form>
+    </div>
+</div>
+
+<hr>
+<div class="alert alert-danger">
+    No se encontro nada con el termino de busqueda
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Bandera
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Poblacion
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        bandera
+                    </td>
+                    <td>
+                        nombre
+                    </td>
+                    <td>
+                        13213245
+                    </td>
+                    <td>
+                        13213245
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
