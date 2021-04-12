@@ -4,6 +4,8 @@ autocomplete="off">
     <input type="text" 
     type="text" 
     name="arg" 
-    class="form-control" [(ngModel)]="arg" 
+    class="form-control" 
+    [(ngModel)]="arg"
+    (input)="keypressed()"
     placeholder="Buscar pais...">
 </form>

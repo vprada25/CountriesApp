@@ -17,7 +17,7 @@ export class CountryComponent {
   constructor(private countriService: CountryService) { }
 
 
-  search(termino : string) {
+  search(termino: string) {
     this.Error = false
     this.arg = termino
     this.countriService.searchCountrie(this.arg)
@@ -33,5 +33,11 @@ export class CountryComponent {
         }
 
       )
+  }
+
+  suggestions(arg: string) {
+    this.Error = false;
+
+    //TODO crear sugerencias.
   }
 }
