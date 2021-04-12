@@ -17,9 +17,9 @@ export class CountryComponent {
   constructor(private countriService: CountryService) { }
 
 
-  search() {
+  search(termino : string) {
     this.Error = false
-    console.log(this.arg)
+    this.arg = termino
     this.countriService.searchCountrie(this.arg)
       .subscribe((res) => {
         console.log(res)
