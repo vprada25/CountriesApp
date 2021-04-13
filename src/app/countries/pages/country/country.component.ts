@@ -37,7 +37,5 @@ export class CountryComponent {
 
   suggestions(arg: string) {
     this.Error = false;
-
-    //TODO crear sugerencias.
   }
 }

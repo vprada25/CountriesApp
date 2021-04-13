@@ -24,4 +24,18 @@ export class CountryService {
      ); */
   }
 
+  searchCapital(arg: string): Observable<Country[]> {
+
+    const url = `${this._apiUrl}/capital/${arg}`
+    return this.http.get<Country[]>(url)
+    
+  }
+
+  searchRegion(arg: string): Observable<Country[]> {
+
+    const url = `${this._apiUrl}/region/${arg}`
+    return this.http.get<Country[]>(url)
+    
+  }
+
 }
