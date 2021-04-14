@@ -28,14 +28,20 @@ export class CountryService {
 
     const url = `${this._apiUrl}/capital/${arg}`
     return this.http.get<Country[]>(url)
-    
+
   }
 
   searchRegion(arg: string): Observable<Country[]> {
 
     const url = `${this._apiUrl}/region/${arg}`
     return this.http.get<Country[]>(url)
-    
+
+  }
+
+  gerCountryforalpha(id: string): Observable<Country> {
+    const url = `${this._apiUrl}/alpha/${id}`
+    return this.http.get<Country>(url)
+
   }
 
 }
