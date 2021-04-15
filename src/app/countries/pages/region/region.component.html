@@ -1,1 +1,19 @@
-<p>region works!</p>
+<h3>Regiones : <small>{{regionActive | titlecase}}</small></h3>
+<hr>
+
+<h5>Seleccion la region </h5>
+
+<!-- [class.btn-primary]= "data === regionActive" -->
+<!-- [ngClass]="{
+    'btn-primary': regionActive === data,
+    'btn-ouline-primary': regionActive!==data
+}"  -->
+<div class="row">
+    <div class="col">
+        <button *ngFor="let data of region" 
+        class="btn btn-outline-primary" 
+        (click)="activeRegion(data)">
+            {{data}}
+        </button>
+    </div>
+</div>
