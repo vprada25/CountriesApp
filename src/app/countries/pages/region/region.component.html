@@ -8,12 +8,20 @@
     'btn-primary': regionActive === data,
     'btn-ouline-primary': regionActive!==data
 }"  -->
+<!-- [class]="(data=== regionActive) ? 'btn btn-primary': 'btn btn-outline-primary'"  -->
 <div class="row">
     <div class="col">
-        <button *ngFor="let data of region" 
-        class="btn btn-outline-primary" 
-        (click)="activeRegion(data)">
-            {{data}}
+        <button *ngFor="let data of region" [class]="getClassCss(data)" (click)="activeRegion(data) "
+            (click)="search(data)">
+            {{data | titlecase}}
         </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="col" *ngIf="country.length > 0">
+            <app-country-table [country]="country"></app-country-table>
+        </div>
     </div>
 </div>
