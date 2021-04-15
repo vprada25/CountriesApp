@@ -21,8 +21,19 @@ export class RegionComponent  {
 
   constructor(private countryService: CountryService) { }
 
-  activeRegion (arg : string){
-    this.regionActive = arg;
+  activeRegion (termino : string){
+    
+    if(termino === this.regionActive) {return;}
+    this.regionActive = termino;
+    this.country = [];
+   
+    this.countryService.searchRegion(termino)
+      .subscribe((res) => {
+        console.log(res)
+        this.country = res;
+  
+      }
+      )
   }
 
   getClassCss (arg: string):string{
@@ -30,21 +41,7 @@ export class RegionComponent  {
   }
 
 
-  search(termino: string) {
-    
-    this.countryService.searchRegion(termino)
-      .subscribe((res) => {
-        console.log(res)
-        this.country = res;
-
-      },
-        (error) => {
-          
-          this.country = []
-        }
-
-      )
-  }
+ 
 
 
   

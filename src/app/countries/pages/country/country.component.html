@@ -1,18 +1,21 @@
-<h2>
-    Paises
-</h2>
-<hr>
+<div class="animate__animated animate__fadeIn animate__faster">
 
-<div class="row">
-    <div class="col">
-        <app-country-input 
-        (onEnter)="search($event)"
-        (onDebounce)="suggestions($event)"
-        placeholder= "Buscar Pais ..."></app-country-input>
+    <h2>
+        Paises
+    </h2>
+    <hr>
+    
+    <div class="row">
+        <div class="col">
+            <app-country-input 
+            (onEnter)="search($event)"
+            (onDebounce)="suggestions($event)"
+            placeholder= "Buscar Pais ..."></app-country-input>
+        </div>
     </div>
+    
+    <hr>
 </div>
-
-<hr>
 <div *ngIf="Error" class="alert alert-danger">
     No se encontro el termino de busqueda: {{arg}}
 </div>

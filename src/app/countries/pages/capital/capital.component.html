@@ -1,19 +1,19 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>
+        Capitales
+    </h2>
+    <hr>
 
-<h2>
-   Capitales
-</h2>
-<hr>
-
-<div class="row">
-    <div class="col">
-        <app-country-input 
-        (onEnter)="search($event)"
-        (onDebounce)="suggestions($event)"
-        placeholder="Buscar Capital ..."></app-country-input>
+    <div class="row">
+        <div class="col">
+            <app-country-input (onEnter)="search($event)" (onDebounce)="suggestions($event)"
+                placeholder="Buscar Capital ..."></app-country-input>
+        </div>
     </div>
-</div>
 
-<hr>
+    <hr>
+
+</div>
 
 <div *ngIf="Error" class="alert alert-danger">
     No se encontro el termino de busqueda: {{arg}}

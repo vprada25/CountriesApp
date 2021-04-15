@@ -23,7 +23,7 @@ export class SeeCountryComponent implements OnInit {
 
     this.activatedRouted.params
       .pipe(
-        switchMap(({ id }) => this.CountryService.gerCountryforalpha(id)),
+        switchMap(({ id }) => this.CountryService.getCountryforalpha(id)),
         tap(console.log)
       )
       .subscribe(res => this.country = res)
