@@ -4,16 +4,33 @@
         Paises
     </h2>
     <hr>
-    
+
     <div class="row">
         <div class="col">
-            <app-country-input 
-            (onEnter)="search($event)"
+            <app-country-input (onEnter)="search($event)" 
             (onDebounce)="suggestions($event)"
-            placeholder= "Buscar Pais ..."></app-country-input>
+                placeholder="Buscar Pais ...">
+            </app-country-input>
         </div>
     </div>
-    
+    <ul *ngIf="viewSuggestion"
+    class="list-group">
+        <li *ngFor="let data of countrySugestion" 
+        class="list-group-item list-group-item-action">
+        <a class="nav-link" 
+        [routerLink]="['/seeCountry' , data.alpha2Code]">
+            {{data.name}}
+        </a>
+        </li>
+        <li  
+        class="list-group-item list-group-item-action"
+        (click)= "searchSuggestions(arg)">
+        <a class="nav-link" >
+            Buscar : "{{arg}}"
+        </a>
+        </li>
+    </ul>
+
     <hr>
 </div>
 <div *ngIf="Error" class="alert alert-danger">
